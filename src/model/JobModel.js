@@ -21,7 +21,11 @@ const jobSchema = new Schema({
     },
     salary: {
         type: Number
-    }
+    },
+    companyName : {
+        type: String,
+        required: true
+    },
 }, 
 {timestamps: true}
 );

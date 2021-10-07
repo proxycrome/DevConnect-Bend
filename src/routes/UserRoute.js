@@ -2,6 +2,7 @@ import { Router } from "express";
 import UserController from "../controllers/UserController.js";
 import authValidator from "../middleware/AuthValidator.js";
 import EmpValidator from "../middleware/EmpValidator.js";
+import DevValidator from "../middleware/DevValidator.js";
 
 const router = Router();
 
@@ -12,5 +13,6 @@ router.route('/employer/:employerId').patch(authValidator, UserController.editEm
 router.route('/employer/s/jobs').post(EmpValidator, UserController.addJobs)
 router.route('/jobs').get(UserController.getJobs)
 router.route('/jobs/:jobId').get(UserController.getJobById)
+router.route('/apply').post(DevValidator, UserController.applyJob)
 
 export default router;

@@ -40,6 +40,10 @@ const devSchema = new Schema({
     gender: {
         type: String,
         required: true
+    },
+    access: {
+        type: String,
+        default: 'dev'
     }
 }, 
 {timestamps: true}
